@@ -12,6 +12,9 @@ from ventas.models import Inmueble
 def home(request):
     return render(request, 'ventas/home.html')
 
+def conocenos(request):
+    return render(request, 'empresa/conocenos.html')
+
 
 @login_required
 def ofrecer_predio(request):
@@ -28,7 +31,7 @@ def ofrecer_predio(request):
         template_name = 'empresa/ofrece.html',
         context = {
             'form': form,
-            'user':request.user,
+            'user': request.user,
             'profile': request.user.profile
         }
     )

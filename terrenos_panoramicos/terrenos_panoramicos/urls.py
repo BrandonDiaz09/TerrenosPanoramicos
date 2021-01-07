@@ -31,6 +31,7 @@ urlpatterns = [
 
     path('', terrenospa_views.home, name='home'),
     path('ofrece/', terrenospa_views.ofrecer_predio, name ='ofrece'),
+    path('conocenos/', terrenospa_views.conocenos, name ='conocenos'),
     
     path('ventas/catalogo/', catalogo_views.catalogo_view, name ='catalogo' ),
     path('users/login/', users_views.login_view, name='login'),
