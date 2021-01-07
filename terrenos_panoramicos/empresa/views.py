@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
+#Form
 from empresa.forms import OfreceForm
+
+#Models
+from ventas.models import Inmueble
 
 
 # Create your views here.
@@ -15,7 +19,6 @@ def ofrecer_predio(request):
         form = OfreceForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            
             return redirect('update_profile')
     else:
         form=OfreceForm()

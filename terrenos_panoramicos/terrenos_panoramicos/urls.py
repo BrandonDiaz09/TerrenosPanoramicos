@@ -33,7 +33,8 @@ urlpatterns = [
     path('ofrece/', terrenospa_views.ofrecer_predio, name ='ofrece'),
     
     path('ventas/catalogo/', catalogo_views.catalogo_view, name ='catalogo' ),
-    
+    path('users/login/', users_views.login_view, name='login'),
+
     path('users/logout/', users_views.logout_view, name='logout'),
     path('users/signup/', users_views.signup_view, name='signup'),
     path('users/me/profile/', users_views.update_profile, name='update_profile'),

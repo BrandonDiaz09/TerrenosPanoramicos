@@ -4,13 +4,13 @@ from django.contrib.auth.models import User
 class Inmueble(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     profile = models.ForeignKey('users.Profile', on_delete=models.CASCADE)
-    surface= models.DecimalField(max_digits=19, decimal_places=10)
-    front = models.DecimalField(max_digits=15, decimal_places=10)
-    bottom = models.DecimalField(max_digits=15, decimal_places=10)
+    surface= models.DecimalField(max_digits=19, decimal_places=2)
+    front = models.DecimalField(max_digits=15, decimal_places=2)
+    bottom = models.DecimalField(max_digits=15, decimal_places=2)
     
     price = models.DecimalField(max_digits=6, 
-                                decimal_places=3)
-    totalprice = models.DecimalField(max_digits=19, decimal_places=10)
+                                decimal_places=2)
+    totalprice = models.DecimalField(max_digits=19, decimal_places=2)
 
     description = models.TextField(max_length=500, blank=True)
 
