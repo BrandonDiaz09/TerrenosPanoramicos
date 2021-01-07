@@ -25,7 +25,7 @@ SECRET_KEY = '(pji2t4plpbblp7re6mth7ny8mou%&w_oe#rpma1+ooxgjf-e$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.70.119.202','10.128.0.3']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -79,9 +79,13 @@ WSGI_APPLICATION = 'terrenos_panoramicos.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'TCHALLA&chiquita2580',
+        'HOST': '35.192.199.27',
+        'PORT': '',
     }
 }
 
