@@ -5,6 +5,6 @@ from ventas.models import Inmueble
 @admin.register(Inmueble)
 class InmuebleAdmin(admin.ModelAdmin):
 
-    list_display = ('pk','owner','surface','front', 'bottom')
+    list_display = ('pk','user','surface','front', 'bottom')
     list_display_links = ('pk',)
-    list_editable = ('owner','surface','front', 'bottom')
+    list_editable = ('user','surface','front', 'bottom')
