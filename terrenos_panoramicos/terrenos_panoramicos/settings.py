@@ -25,10 +25,7 @@ SECRET_KEY = '(pji2t4plpbblp7re6mth7ny8mou%&w_oe#rpma1+ooxgjf-e$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.70.119.202',
-                'estuvofacil.com',
-                '127.0.0.1',
-                '192.168.4.28']
+ALLOWED_HOSTS = ['estuvofacil.com','34.70.228.140',]
 
 
 # Application definition
