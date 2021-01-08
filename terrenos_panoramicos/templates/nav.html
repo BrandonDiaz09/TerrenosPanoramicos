@@ -56,9 +56,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url "update_profile" %}">
                 {% if request.user.profile.picture %}
-                        <img src="{{ request.user.profile.picture.url }}" id="index-home" alt="user"/>
+                        <img class="rounded-circle" src="{{ request.user.profile.picture.url }}" id="index-home" alt="user"/>
                     {% else%}
-                        <img src="{% static 'img/default-profile.png' %}" id="index-home" alt="user"/>
+                        <img class="rounded-circle" src="{% static 'img/default-profile.png' %}" id="index-home" alt="user"/>
                     {% endif %}
                 </a>
             </li>

@@ -27,17 +27,22 @@ from ventas import views as catalogo_views
 from empresa import views as terrenospa_views
 
 urlpatterns = [
+    #Admin
     path('admin/', admin.site.urls),
 
+    #Empresa
     path('', terrenospa_views.home, name='home'),
     path('ofrece/', terrenospa_views.ofrecer_predio, name ='ofrece'),
     path('conocenos/', terrenospa_views.conocenos, name ='conocenos'),
     
+    #Ventas
     path('ventas/catalogo/', catalogo_views.catalogo_view, name ='catalogo' ),
-    path('users/login/', users_views.login_view, name='login'),
 
+    #Users 
+    path('users/login/', users_views.login_view, name='login'),
     path('users/logout/', users_views.logout_view, name='logout'),
     path('users/signup/', users_views.signup_view, name='signup'),
     path('users/me/profile/', users_views.update_profile, name='update_profile'),
+    path('<str:username>/', view=users_views.UserDetailView.as_view(), name='detail')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
