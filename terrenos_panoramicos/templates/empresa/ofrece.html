@@ -13,7 +13,7 @@
             <div class="col-6 pt-3 pb-3" id="profile-box">
                 <h4 class="mb-4">¡Ofrece tu predio!</h4>
 
-                <form method="POST" enctype="multipart/form-data">
+                <form action="{% url 'ofrece'%}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
 
                     {% for error in form.error%}
@@ -100,7 +100,37 @@
                         </div>
                     </div>
 
-                    {% comment %} <input type="hidden" name="totalprice" value="{{ (profile.pk)* }} " /> {% endcomment %}
+                    <div class="form-group">
+                        <label>Regimen propiedad:</label>
+                        <select class="form-control {% if form.regimen_propiedad.errors %}is-invalid{% endif %}"
+                                name="regimen_propiedad"
+                                placeholder="Regimen Propiedad">
+                            <option value="PR">Privada</option>
+                            <option value="EJ">Ejidal</option>
+                            <option value="CM">Comunal</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            {% for error in form.regimen_propiedad.errors %}{{ error }}{% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Uso de suelo:</label>
+                        <select class="form-control {% if form.uso_suelo.errors %}is-invalid{% endif %}"
+                                name="uso_suelo"
+                                placeholder="Uso de suelo"
+                        >
+                            <option value="RS">Residencial</option>
+                            <option value="AP">Actividades Productivas</option>
+                            <option value="EQ">Equipamiento</option>
+                            <option value="IN">Infraestructura</option>
+                            <option value="AV">Area Verde</option>
+                            <option value="OT">Otro</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            {% for error in form.uso_suelo.errors %}{{ error }}{% endfor %}
+                        </div>
+                    </div>
 
                     
                     <div class="form-group">

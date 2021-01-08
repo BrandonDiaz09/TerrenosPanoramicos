@@ -19,7 +19,7 @@ class Inmueble(models.Model):
     creted = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
-    
+    #Choice Regimen propiedad
     PRIVADA = 'PR'
     EJIDAL= 'EJ'
     COMUNAL='CM'
@@ -35,7 +35,31 @@ class Inmueble(models.Model):
         choices=REGIMEN_PROPIEDAD,
         default=PRIVADA
     )
+
+    #Choice uso de suelo
+    RESIDENCIAL = 'RS'
+    ACTIVIDADES_PRODUCTIVAS= 'AP'
+    EQUIPAMIENTO='EQ'
+    INFRAESTRUCTURA= 'IN' 
+    AREA_VERDE= 'AV'
+    OTRO= 'OT'
     
+    USO_SUELO = [
+        (RESIDENCIAL,'Residencial'),
+        (ACTIVIDADES_PRODUCTIVAS,'Actividades Productivas'),
+        (EQUIPAMIENTO,'Equipamiento'),
+        (INFRAESTRUCTURA,'Infraestructura'),
+        (AREA_VERDE,'Area Verde'),
+        (OTRO,'Otro')
+    ]
+
+    uso_suelo = models.CharField(
+        max_length=2,
+        choices=USO_SUELO,
+        default=AREA_VERDE
+    )
+    
+    #Choice status
     OFERTA = 'OF'
     SOLICITUD= 'SO'
     VENDIDO='VD'
