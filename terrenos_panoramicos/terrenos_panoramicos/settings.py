@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,6 @@ SECRET_KEY = '(pji2t4plpbblp7re6mth7ny8mou%&w_oe#rpma1+ooxgjf-e$'
 DEBUG = True
 
 ALLOWED_HOSTS = ['estuvofacil.com','34.70.228.140',]
-
 
 # Application definition
 
@@ -126,15 +126,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_URL ='ESTATICO'
+STATIC_ROOT = (BASE_DIR / 'static')
+
+#STATICFILES_DIRS = (
+ #   BASE_DIR / "static",
+  #  )
 
 MEDIA_ROOT = (BASE_DIR / 'media')
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = (
-    BASE_DIR / 'static',
-)
+
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
