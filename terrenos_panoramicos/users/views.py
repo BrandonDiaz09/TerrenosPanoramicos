@@ -32,37 +32,6 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     #     context['posts'] = Post.objects.filter(user=user).order_by('-created')
     #     return context
 
-def update_profile(request):
-
-    profile = request.user.profile
-
-    if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES)
-        if form.is_valid():
-            data = form.cleaned_data
-
-            profile.curp = data['curp']
-            profile.phone_number = data['phone_number']
-            profile.ine = data['ine']
-            profile.picture = data['picture']
-            profile.save()
-
-            url = reverse('detail', kwargs={'username': request.user.username})
-            return redirect(url)
-
-    else:
-        form = ProfileForm()
-
-    return render(
-        request=request,
-        template_name='users/update_profile.html',
-        context={
-            'profile': profile,
-            'user':request.user,
-            'form':form
-        }
-    )
-
 def login_view(request):
 
     if request.method=='POST':
@@ -97,3 +66,36 @@ def logout_view(request):
 
     logout(request)
     return redirect('login')
+
+@login_required
+def update_profile(request):
+
+    profile = request.user.profile
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            data = form.cleaned_data
+
+            profile.curp = data['curp']
+            profile.phone_number = data['phone_number']
+            profile.ine = data['ine']
+            profile.picture = data['picture']
+            profile.save()
+
+            url = reverse('detail', kwargs={'username': request.user.username})
+            return redirect(url)
+
+    else:
+        form = ProfileForm()
+
+    return render(
+        request=request,
+        template_name='users/update_profile.html',
+        context={
+            'profile': profile,
+            'user':request.user,
+            'form':form
+        }
+    )
+   
