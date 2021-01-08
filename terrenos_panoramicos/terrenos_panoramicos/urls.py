@@ -36,7 +36,7 @@ urlpatterns = [
     path('conocenos/', terrenospa_views.conocenos, name ='conocenos'),
     
     #Ventas
-    path('ventas/catalogo/', catalogo_views.catalogo_view, name ='catalogo' ),
+    path('ventas/catalogo/', catalogo_views.InmuebleView.as_view(), name ='catalogo' ),
 
     #Users 
     path('users/login/', users_views.login_view, name='login'),

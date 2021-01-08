@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block container %}
+<!-- Main -->
     <main id="main">
       <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false">
         <div class="carousel-inner">
@@ -31,6 +32,7 @@
       </div>
       </div>
     </main>
+    <!-- /Main -->
 
     <!Característica 1-->
     <p id="Subtitulo">Característica 1</p>
@@ -59,7 +61,27 @@
 
     <!--First slide-->
     <div class="carousel-item active">
-<!-- /Característica 1 -->
+
+     
+    <!--/.First slide-->
+
+    <!--Second slide-->
+    <div id="car1" class="carousel-item">
+
+     
+
+    </div>
+    <!--/.Second slide-->
+
+   
+
+  </div>
+  <!--/.Slides-->
+
+</div>
+<!--/.Carousel Wrapper-->
+    
+    <!-- /Característica 1 -->
     <br>
     <!Característica 2-->
     <p id="Subtitulo">Característica 2</p>
@@ -87,133 +109,19 @@
   <div class="carousel-inner" role="listbox">
 
     <!--First slide-->
-    <div class="carousel-item active">
-
-      <div  id="car1" class="col-md-3" style="float:left">
-       <div id="car1" class="card mb-2">
-          <img id="car1" class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-          <div id="car1" class="card-body">
-            <p id="car1" class="card-text">Superficie</p> 
-            <p id="car1" class="card-text">Servicios</p>
-            <p id="car1" class="card-text">Localidad</p>
-            <p id="car1" class="card-text">Rígeme de propiedad </p>
-            <p id="car1" class="card-text">Frente y Fondo</p>
-            <a id="car1" div="boron" class="btn btn-primary"><img src="{% static 'logos/Encorazona.png' %}" alt="Me_Encorazona" width="30px" height="30px"/></a>
-          </div>
-        </div>
-      </div>
-
-      <div id="car1" class="col-md-3" style="float:left">
-        <div id="car1" class="card mb-2">
-          <img id="car1" class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-           <div id="car1" class="card-body">
-            <p id="car1" class="card-text">Superficie</p> 
-            <p id="car1" class="card-text">Servicios</p>
-            <p id="car1" class="card-text">Localidad</p>
-            <p id="car1" class="card-text">Rígeme de propiedad </p>
-            <p id="car1" class="card-text">Frente y Fondo</p>
-            <a id="car1" div="boron" class="btn btn-primary"><img src="{% static 'logos/Encorazona.png' %}" alt="Me_Encorazona" width="30px" height="30px"/></a>
-          </div>
-        </div>
-      </div>
-
-      <div id="car1" class="col-md-3" style="float:left">
-        <div id="car1" class="card mb-2">
-          <img id="car1" class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-           <div id="car1" class="card-body">
-            <p id="car1" class="card-text">Superficie</p> 
-            <p id="car1" class="card-text">Servicios</p>
-            <p id="car1" class="card-text">Localidad</p>
-            <p id="car1" class="card-text">Rígeme de propiedad </p>
-            <p id="car1" class="card-text">Frente y Fondo</p>
-            <a id="car1" div="boron" class="btn btn-primary"><img src="{% static 'logos/Encorazona.png' %}" alt="Me_Encorazona" width="30px" height="30px"/></a>
-          </div>
-        </div>
-      </div>
-      
-       <div id="car1" class="col-md-3" style="float:left">
-       <div id="car1" class="card mb-2">
-          <img id="car1" class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-           <div id="car1" class="card-body">
-            <p id="car1" class="card-text">Superficie</p> 
-            <p id="car1" class="card-text">Servicios</p>
-            <p id="car1" class="card-text">Localidad</p>
-            <p id="car1" class="card-text">Rígeme de propiedad </p>
-            <p id="car1" class="card-text">Frente y Fondo</p>
-            <a id="car1" div="boron" class="btn btn-primary"><img src="{% static 'logos/Encorazona.png' %}" alt="Me_Encorazona" width="30px" height="30px"/></a>
-          </div>
-        </div>
-      </div>
-
+   
+            {% for inmueble in inmuebles %}
+                {% include "ventas/terreno.html" %}
+            {% endfor %}
+    
     </div>
+    {% include "pagination.html" %}
     <!--/.First slide-->
 
     <!--Second slide-->
     <div id="car1" class="carousel-item">
 
-      <div id="car1" class="col-md-3" style="float:left">
-        <div id="car1" class="card mb-2">
-          <img id="car1" class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-           <div id="car1" class="card-body">
-            <p id="car1" class="card-text">Superficie</p> 
-            <p id="car1" class="card-text">Servicios</p>
-            <p id="car1" class="card-text">Localidad</p>
-            <p id="car1" class="card-text">Rígeme de propiedad </p>
-            <p id="car1" class="card-text">Frente y Fondo</p>
-            <a div="boron" class="btn btn-primary"><img src="{% static 'logos/Encorazona.png' %}" alt="Me_Encorazona" width="30px" height="30px"/></a>
-          </div>
-        </div>
-      </div>
-
-      <div  id="car1" class="col-md-3" style="float:left">
-        <div id="car1" class="card mb-2">
-          <img id="car1" class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-           <div id="car1" class="card-body">
-            <p id="car1" class="card-text">Superficie</p> 
-            <p id="car1" class="card-text">Servicios</p>
-            <p id="car1" class="card-text">Localidad</p>
-            <p id="car1" class="card-text">Rígeme de propiedad </p>
-            <p id="car1" class="card-text">Frente y Fondo</p>
-            <a  id="car1" div="boron" class="btn btn-primary"><img src="{% static 'logos/Encorazona.png' %}" alt="Me_Encorazona" width="30px" height="30px"/></a>
-          </div>
-        </div>
-      </div>
-
-      <div  id="car1" class="col-md-3" style="float:left; background: #F7F8EC!important;">
-        <div  id="car1" class="card mb-2">
-          <img id="car1" class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-           <div id="car1" class="card-body">
-            <p id="car1" class="card-text">Superficie</p> 
-            <p id="car1" class="card-text">Servicios</p>
-            <p id="car1" class="card-text">Localidad</p>
-            <p id="car1" class="card-text">Rígeme de propiedad </p>
-            <p id="car1" class="card-text">Frente y Fondo</p>
-            <a id="car1" div="boron" class="btn btn-primary"><img src="{% static 'logos/Encorazona.png' %}" alt="Me_Encorazona" width="30px" height="30px"/></a>
-          </div>
-        </div>
-      </div>
       
-      <div id="car1" class="col-md-3" style="float:left">
-        <div id="car1" class="card mb-2">
-          <img id="car1" class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-           <div id="car1" class="card-body">
-            <p id="car1" class="card-text">Superficie</p> 
-            <p id="car1" class="card-text">Servicios</p>
-            <p id="car1" class="card-text">Localidad</p>
-            <p id="car1" class="card-text">Rígeme de propiedad </p>
-            <p id="car1" class="card-text">Frente y Fondo</p>
-            <a id="car1" div="boron" class="btn btn-primary"><img src="{% static 'logos/Encorazona.png' %}" alt="Me_Encorazona" width="30px" height="30px"/></a>
-          </div>
-        </div>
-      </div>
 
     </div>
     <!--/.Second slide-->
@@ -224,8 +132,6 @@
   <!--/.Slides-->
 
 </div>
-<!--/.Carousel Wrapper-->
-<!--Característica 2-->
 
 
     <!-- Optional JavaScript -->

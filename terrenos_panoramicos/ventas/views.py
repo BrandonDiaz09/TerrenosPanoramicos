@@ -11,17 +11,16 @@ from django.views.generic import ListView
 from ventas.models import Inmueble
 
 
-# class PostsFeedView(LoginRequiredMixin, ListView):
-#     """Return all published posts."""
+class InmuebleView(LoginRequiredMixin, ListView):
+    """Return published inmuebles."""
 
-#     template_name = 'posts/feed.html'
-#     model = Post
-#     ordering = ('-created',)
-#     paginate_by = 2
-#     context_object_name = 'posts'
-# Create your views here.
+    template_name = 'ventas/catalogo.html'
+    #model = Inmueble
+    queryset = Inmueble.objects.filter(status__exact='OF')
+    #ordering = ('-created',)
+    paginate_by = 4
+    context_object_name = 'inmuebles'
 
-
-@login_required
-def catalogo_view(request):
-    return render(request, 'ventas/catalogo.html')
+# @login_required
+# def catalogo_view(request):
+#     return render(request, 'ventas/catalogo.html')
