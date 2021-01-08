@@ -38,7 +38,7 @@
     <p id="Subtitulo">Característica 1</p>
     
     <!--Carousel Wrapper-->
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+{% comment %} <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel"> {% endcomment %}
 
   <!--Controls-->
   <div class="controls-top">
@@ -62,33 +62,26 @@
     <!--First slide-->
     <div class="carousel-item active">
 
-     
+     {% for inmueble in inmuebles %}
+                {% include "ventas/terreno.html" %}
+     {% endfor %}
     <!--/.First slide-->
 
     <!--Second slide-->
-    <div id="car1" class="carousel-item">
-
-     
-
-    </div>
+    <div id="car1" class="carousel-item"></div>
     <!--/.Second slide-->
-
-   
-
+    </div>
+    <!--/.Slides-->
   </div>
-  <!--/.Slides-->
-
-</div>
+  {% include "pagination.html" %}
 <!--/.Carousel Wrapper-->
     
     <!-- /Característica 1 -->
-    <br>
+    {% comment %} <br>
     <!Característica 2-->
     <p id="Subtitulo">Característica 2</p>
-    
     <!--Carousel Wrapper-->
 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-
   <!--Controls-->
   <div class="controls-top">
     <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
@@ -96,43 +89,23 @@
         class="fas fa-chevron-right"></i></a>
   </div>
   <!--/.Controls-->
-
   <!--Indicators-->
   <ol class="carousel-indicators">
     <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
     <li data-target="#multi-item-example" data-slide-to="1"></li>
-    
   </ol>
   <!--/.Indicators-->
-
   <!--Slides-->
   <div class="carousel-inner" role="listbox">
-
-    <!--First slide-->
-   
-            {% for inmueble in inmuebles %}
-                {% include "ventas/terreno.html" %}
-            {% endfor %}
-    
+    <!--First slide--> 
     </div>
-    {% include "pagination.html" %}
     <!--/.First slide-->
-
     <!--Second slide-->
-    <div id="car1" class="carousel-item">
-
-      
-
-    </div>
+    <div id="car1" class="carousel-item"></div>
     <!--/.Second slide-->
-
-   
-
-  </div>
-  <!--/.Slides-->
-
 </div>
-
+  <!--/.Slides-->
+</div> {% endcomment %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
