@@ -93,9 +93,9 @@ def update_profile(request):
         request=request,
         template_name='users/update_profile.html',
         context={
+            'form':form,
             'profile': profile,
             'user':request.user,
-            'form':form
         }
     )
    
