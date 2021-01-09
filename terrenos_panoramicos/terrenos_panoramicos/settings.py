@@ -26,7 +26,7 @@ SECRET_KEY = '(pji2t4plpbblp7re6mth7ny8mou%&w_oe#rpma1+ooxgjf-e$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['estuvofacil.com','34.70.228.140',]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -126,17 +126,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-<<<<<<< HEAD
 STATIC_URL ='ESTATICO'
 STATIC_ROOT = (BASE_DIR / 'static')
 
 #STATICFILES_DIRS = (
  #   BASE_DIR / "static",
   #  )
-=======
 STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
->>>>>>> d39494c4a26f9e5312616b38d34e47573f6b30db
 
 MEDIA_ROOT = (BASE_DIR / 'media')
 MEDIA_URL = '/media/'
