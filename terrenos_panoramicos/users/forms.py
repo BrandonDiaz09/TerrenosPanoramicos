@@ -7,21 +7,21 @@ class SignupForm(forms.Form):
 
     username = forms.CharField(min_length=4, max_length=50)
 
-    password = forms.CharField(
+    contraseña = forms.CharField(
         max_length=70,
         widget=forms.PasswordInput()
     )
-    password_confirmation = forms.CharField(
+    confirmar_contraseña = forms.CharField(
         max_length=70,
         widget=forms.PasswordInput()
     )
 
-    first_name = forms.CharField(min_length=2, max_length=50)
-    last_name = forms.CharField(min_length=2, max_length=50)
+    nombre = forms.CharField(min_length=2, max_length=50)
+    apellido_paterno = forms.CharField(min_length=2, max_length=50)
 
-    last_nameMa = forms.CharField( min_length=2, max_length=50)
+    apellido_materno = forms.CharField( min_length=2, max_length=50)
     
-    email = forms.CharField(
+    correo_electrónico = forms.CharField(
         min_length=6,
         max_length=70,
         widget=forms.EmailInput()
@@ -32,23 +32,23 @@ class SignupForm(forms.Form):
         username = self.cleaned_data['username']
         username_taken = User.objects.filter(username=username).exists()
         if username_taken:
-            raise forms.ValidationError('El usuario ya esta en uso')
+            raise forms.ValidationError('El username ya esta en uso')
         return username
 
     def clean_email(self):
         """Email must be unique."""
-        email = self.cleaned_data['email']
+        email = self.cleaned_data['correo_electrónico']
         email_taken = User.objects.filter(email=email).exists()
         if email_taken:
-            raise forms.ValidationError('El email ya esta en uso')
+            raise forms.ValidationError('El correo electrónico ya esta en uso')
         return email
 
     def clean(self):
         """Verify password confirmation match."""
         data = super().clean()
 
-        password = data['password']
-        password_confirmation = data['password_confirmation']
+        password = data['contraseña']
+        password_confirmation = data['confirmar_contraseña']
 
         if password != password_confirmation:
             raise forms.ValidationError('La contraseña no coincide')
@@ -60,12 +60,12 @@ class SignupForm(forms.Form):
         data = self.cleaned_data
 
         user = User.objects.create_user(username=data['username'], 
-                                        password=data['password'],
-                                        first_name=data['first_name'],
-                                        last_name=data['last_name'],
-                                        email=data['email'])
+                                        password=data['contraseña'],
+                                        first_name=data['nombre'],
+                                        last_name=data['apellido_paterno'],
+                                        email=data['correo_electrónico'])
         profile = Profile(user=user,
-                          last_nameMa= data['last_nameMa'])
+                          last_nameMa= data['apellido_materno'])
         profile.save()
 
 class ProfileForm(forms.Form):
